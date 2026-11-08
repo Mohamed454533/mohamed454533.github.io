@@ -145,6 +145,21 @@ Written in English for any AI assistant or developer. Companion to `RULES.md`.
 - `FONT_RULES.md` is now a referenced project rule file (still not published as a
   site page; it remains a local reference).
 
+### 2026-11-09 — Full SEO audit (verified) + fixes
+- Ran a comprehensive live audit (page, robots, sitemap, all assets, JSON-LD,
+  headings, images, meta, keywords). Confirmed healthy: HTTP 200 everywhere;
+  single h1 with clean h1→h2→h3 hierarchy; 11 OG + 5 Twitter tags; valid
+  WebSite/ProfilePage/Person JSON-LD with absolute URLs; all 5 images have alt +
+  width/height; source HTML has 0 kashida (display-only); robots.txt + sitemap.xml
+  200 and canonical-matched; all three keyword forms present (spaced form in body
+  + alternateName).
+- Applied genuine improvements: Person `sameAs` → GitHub profile; ProfilePage
+  `dateModified` 2026-11-09; nav `aria-label`; meta description trimmed 176→151
+  chars; sitemap image entries 2→4 (added about photo + grass-ball).
+- Verified live: sameAs, dateModified, aria-label present; sitemap has 4 images.
+- SEO note on kashida: no negative impact — indexed source is kashida-free and
+  tatweel (U+0640) is a decorative char normalized by search engines; no cloaking.
+
 ## Current state
 
 - Site is live, fully built, SEO-optimized, mobile-friendly, with the real photo,
