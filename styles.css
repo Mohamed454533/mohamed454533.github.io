@@ -293,6 +293,33 @@ img { display: block; max-width: 100%; }
   margin-bottom: 16px;
 }
 
+/* ---------- Links ---------- */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.link-item {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--green-dark);
+  font-weight: 600;
+  font-size: 14px;
+  background: #faf9f6;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 12px;
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+
+.link-item:hover {
+  background: var(--amber-soft);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
 /* ---------- Footer ---------- */
 .footer {
   text-align: center;
@@ -319,6 +346,7 @@ body.js .reveal.visible { opacity: 1; transform: none; }
   .card { padding: 20px; }
   .profile-body { padding: 0 20px 20px; }
   .style-grid { grid-template-columns: 1fr; }
+  .links-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
   .about-photo { max-width: 280px; margin: 0 auto; }
   .legacy-photo { height: 150px; }
