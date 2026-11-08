@@ -160,6 +160,27 @@ Written in English for any AI assistant or developer. Companion to `RULES.md`.
 - SEO note on kashida: no negative impact — indexed source is kashida-free and
   tatweel (U+0640) is a decorative char normalized by search engines; no cloaking.
 
+### 2026-11-09 — GitHub profile + backlinks + external links
+- Goal: configure the GitHub profile (github.com/HeshmatSayad) from the website
+  content and create bidirectional + external links for SEO.
+- Created the profile README repo `HeshmatSayad/HeshmatSayad` (public). Uploaded a
+  Persian RTL `README.md` (source kept at `Heshmat/profile/README.md`) with the bio,
+  keywords (all 3 name forms), avatar image, a keyword-anchor backlink to
+  https://heshmatsayad.github.io/, and external links (TUMS, FFIRI). This README
+  renders on the GitHub profile and is indexed by google.com → a high-authority
+  backlink to the site.
+- Website: added a «پیوندها» section + nav item with a visible link to the GitHub
+  profile (bidirectional with the README backlink and the JSON-LD sameAs), plus
+  authoritative outbound links: دانشگاه علوم پزشکی تهران (tums.ac.ir) and فدراسیون
+  فوتبال ایران (ffiri.ir). Links use target=_blank rel=noopener. Verified live.
+- Profile fields (name/bio/company/blog/location): BLOCKED — the device-flow token
+  lacks the `user` scope (PATCH /user → 404). Ran `gh auth refresh -h github.com -s user`
+  (device code 06C0-69D8); awaiting user authorization. Once authorized, set:
+  name=حشمت صیادپرست, bio (nickname + حشمت صیاد + بدرهٔ ایلام), company=دانشگاه علوم
+  پزشکی تهران, blog=https://heshmatsayad.github.io, location=تهران، ایران.
+- Note: gh api endpoints need `MSYS_NO_PATHCONV=1` (or no leading slash) in Git Bash
+  to avoid /repos being rewritten to a filesystem path.
+
 ## Current state
 
 - Site is live, fully built, SEO-optimized, mobile-friendly, with the real photo,
@@ -171,6 +192,11 @@ Written in English for any AI assistant or developer. Companion to `RULES.md`.
 
 ## Pending / recommended (requires user action)
 
+- **GitHub profile fields:** the device-flow token lacks the `user` scope, so
+  name/bio/company/blog/location could not be set (PATCH /user → 404). Needs
+  `gh auth refresh -h github.com -s user` authorized by the user (device code).
+  The first code 06C0-69D8 expired; regenerate and have the user authorize, then
+  apply the field values listed in the 2026-11-09 GitHub-profile log entry.
 - **Google Search Console:** verify the property and submit
   `https://heshmatsayad.github.io/sitemap.xml` for faster indexing. This needs the
   user's Google account; not yet done.
