@@ -134,9 +134,14 @@ Written in English for any AI assistant or developer. Companion to `RULES.md`.
   nickname banner, blockquote) after `document.fonts.ready`, measuring with canvas
   using each element's computed Vazir font. HTML source stays raw (SEO-safe).
 - Added **Rule 4** to `RULES.md`.
-- Verified via CDP: 247 kashida chars in rendered DOM, h1 = `حـشـمـت صـیـادپـرسـت`,
-  no overflow (scrollWidth <= innerWidth), all images load. Verified live:
-  script.js served with algorithm, HTML source has 0 kashida (display-only).
+- User then required stretching in ALL text, not only titles. Reworked
+  `applyKashida` to walk every visible body text node (TreeWalker, SHOW_TEXT),
+  skipping script/style/noscript/input/textarea, stretching each with its parent's
+  computed font. Rule 4 updated to "all display text".
+- Verified via CDP: 892 kashida chars in rendered DOM (incl. paragraphs), About
+  paragraph stretched, ZWNJ preserved, no overflow (scrollWidth <= innerWidth),
+  all images load. Verified live: script.js uses the text walker, HTML source has
+  0 kashida (display-only).
 - `FONT_RULES.md` is now a referenced project rule file (still not published as a
   site page; it remains a local reference).
 
