@@ -121,13 +121,33 @@ Written in English for any AI assistant or developer. Companion to `RULES.md`.
 - Note: a user reference file `FONT_RULES.md` (Kashida stretching, unrelated to
   this site) exists in the folder; left untracked, NOT committed/published.
 
+### 2026-11-09 — ZWNJ & Kashida (Rule 4, per FONT_RULES.md)
+- User ordered the ZWNJ (half-space) and Kashida (stretching) rules from
+  `FONT_RULES.md` applied precisely to the site.
+- ZWNJ audit: content already correct (all plural «ها» and prefix «می» use U+200C,
+  no full-space violations). The keyword form `حشمت صیاد پرست` keeps its full
+  space intentionally (Rule 2 exception).
+- Implemented the exact `FONT_RULES.md` algorithm in `script.js`
+  (joiningType/lettersJoin/withKashidas/stretched, ratio 1.25, one kashida per
+  valid gap, fill in order, stop at target, skip already-stretched). Applied
+  display-only to titles/labels (h1/h2/h3, tags, nav, brand, timeline-place,
+  nickname banner, blockquote) after `document.fonts.ready`, measuring with canvas
+  using each element's computed Vazir font. HTML source stays raw (SEO-safe).
+- Added **Rule 4** to `RULES.md`.
+- Verified via CDP: 247 kashida chars in rendered DOM, h1 = `حـشـمـت صـیـادپـرسـت`,
+  no overflow (scrollWidth <= innerWidth), all images load. Verified live:
+  script.js served with algorithm, HTML source has 0 kashida (display-only).
+- `FONT_RULES.md` is now a referenced project rule file (still not published as a
+  site page; it remains a local reference).
+
 ## Current state
 
-- Site is live, fully built, SEO-optimized, mobile-friendly, with the real photo
-  and self-hosted Vazir font.
+- Site is live, fully built, SEO-optimized, mobile-friendly, with the real photo,
+  self-hosted Vazir font, and ZWNJ + Kashida shaping.
 - All project files are under `D:\Projects\PublicProfile\Heshmat`.
 - Governance files: `RULES.md` (English, Rule 1 photos + Rule 2 strict SEO +
-  target keywords + Rule 3 strict Vazir font) and this `MEMORY.md`.
+  target keywords + Rule 3 strict Vazir font + Rule 4 ZWNJ/Kashida) and this
+  `MEMORY.md`. `FONT_RULES.md` is the local shaping reference for Rule 4.
 
 ## Pending / recommended (requires user action)
 
