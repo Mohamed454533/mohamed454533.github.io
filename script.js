@@ -76,21 +76,23 @@ function stretched(text, measure, ratio = 1.25) {
   return out;
 }
 
-const KASHIDA_SELECTOR =
-  "h1, h2, h3, .tag, .nav-links a, .brand span, .timeline-place, " +
-  ".nickname-title, .nickname-label, .nickname-sub, blockquote";
-
 function applyKashida() {
   const ctx = document.createElement("canvas").getContext("2d");
-  document.querySelectorAll(KASHIDA_SELECTOR).forEach((el) => {
-    const text = el.textContent;
-    if (!text.trim() || el.querySelector("*")) return;
-    const cs = getComputedStyle(el);
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+
+  for (const node of nodes) {
+    const parent = node.parentElement;
+    if (!parent || parent.closest("script, style, noscript, textarea, input")) continue;
+    const text = node.nodeValue;
+    if (!text.trim()) continue;
+    const cs = getComputedStyle(parent);
     ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
     const measure = (s) => ctx.measureText(s).width;
     const result = stretched(text, measure);
-    if (result !== text) el.textContent = result;
-  });
+    if (result !== text) node.nodeValue = result;
+  }
 }
 
 if (document.fonts && document.fonts.ready) {
