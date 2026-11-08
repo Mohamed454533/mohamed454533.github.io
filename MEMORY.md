@@ -181,14 +181,34 @@ Written in English for any AI assistant or developer. Companion to `RULES.md`.
 - Note: gh api endpoints need `MSYS_NO_PATHCONV=1` (or no leading slash) in Git Bash
   to avoid /repos being rewritten to a filesystem path.
 
+### 2026-11-09 — SEO master-prompt pass (SEO_Master_Prompt_English.txt)
+- Read the comprehensive SEO framework file; applied feasible outstanding items
+  to the website (GitHub profile fields remain Blocked on `user` scope).
+- Implemented + verified live:
+  - WebP for large images via browser canvas (Pillow unavailable in this env):
+    cover.jpg 434KB→cover.webp 300KB; grass-ball.jpg 220KB→144KB. `<picture>` with
+    JPEG fallback; LCP preload switched to cover.webp. currentSrc confirms WebP used.
+  - Descriptive image filename: pictures/photo_2024-07-27_11-53-24.jpg →
+    pictures/heshmat-sayadparast.jpg (git mv; index.html + sitemap updated).
+  - rel="me" on the website's GitHub-profile link (identity linking).
+  - Custom 404.html (noindex,follow; on-brand Vazir RTL; links home). Verified live:
+    missing URL returns HTTP 404 with the custom page.
+- Added **Rule 5** to RULES.md (audit framework + WebP/filename/404/rel=me conventions).
+- Framework items marked Blocked/Not Verified: GitHub profile fields (user scope),
+  Google Search Console + Analytics (user's Google account), field Core Web Vitals
+  (no CrUX data yet). N/A for this single-page profile: e-commerce, hreflang,
+  breadcrumbs, local business schema.
+
 ## Current state
 
 - Site is live, fully built, SEO-optimized, mobile-friendly, with the real photo,
   self-hosted Vazir font, and ZWNJ + Kashida shaping.
 - All project files are under `D:\Projects\PublicProfile\Heshmat`.
 - Governance files: `RULES.md` (English, Rule 1 photos + Rule 2 strict SEO +
-  target keywords + Rule 3 strict Vazir font + Rule 4 ZWNJ/Kashida) and this
-  `MEMORY.md`. `FONT_RULES.md` is the local shaping reference for Rule 4.
+  target keywords + Rule 3 strict Vazir font + Rule 4 ZWNJ/Kashida + Rule 5 SEO
+  audit framework & technical conventions) and this `MEMORY.md`. `FONT_RULES.md`
+  is the local shaping reference for Rule 4; `SEO_Master_Prompt_English.txt` is the
+  audit framework for Rule 5.
 
 ## Pending / recommended (requires user action)
 

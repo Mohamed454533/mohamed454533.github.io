@@ -80,3 +80,27 @@ Follow the project reference `FONT_RULES.md` exactly for Persian text shaping.
 - **Display-only:** stretching happens at render time in the DOM; the HTML source
   (stored data) stays raw — never stretch input fields or stored content. This
   keeps the crawled source clean for SEO (Rule 2).
+
+## Rule 5 — SEO Audit Framework & Technical Conventions (Strict)
+
+SEO audits and improvements follow the project framework
+`SEO_Master_Prompt_English.txt`. Apply its mandatory rules:
+
+- Use evidence only; never assume an action is done. Assign each item a status
+  (Done / Needs Improvement / Not Done / In Progress / Blocked / Not Verified /
+  Not Applicable) and report Completed / Remaining / Blocked / Not Verified
+  separately. Never guarantee rankings, traffic, or indexing.
+- Classify claims (official documentation / observed evidence / practical
+  recommendation / hypothesis / myth). No spam-policy violations.
+
+Standing technical conventions for this site:
+
+- **Images:** serve large images as WebP with a JPEG `<picture>` fallback;
+  descriptive filenames; accurate non-stuffed `alt`; explicit width/height;
+  `loading="lazy"` below the fold; preload the LCP image.
+- **404:** a custom `404.html` (meta `noindex, follow`, on-brand, links home) is
+  served by GitHub Pages for missing URLs.
+- **Identity links:** links to the owner's GitHub profile use `rel="me"`;
+  JSON-LD `Person.sameAs` points to the same profile.
+- **Verification:** after every publish, check the live URL (status codes, tags,
+  assets, custom 404) before reporting success.
