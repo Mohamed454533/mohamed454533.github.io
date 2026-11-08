@@ -108,12 +108,26 @@ Written in English for any AI assistant or developer. Companion to `RULES.md`.
 - Recorded the three target keywords in `RULES.md` under Rule 2.
 - Pushed; verified live title and alternateName.
 
+### 2026-11-09 — Strict Vazir font (Rule 3)
+- User ordered the font strictly set to **Vazir** (وزیر), not Vazirmatn.
+- Self-hosted Vazir woff2 (Regular/Medium/Bold/Black, ~44 KB each) under
+  `assets/fonts/`; removed the Vazirmatn CDN stylesheet and jsDelivr preconnect.
+- Added four `@font-face` rules (weights 400/500/700/900, `font-display: swap`)
+  and set `font-family: 'Vazir', Tahoma, sans-serif`. Preloaded Regular + Bold.
+- Added **Rule 3** to `RULES.md`: font must strictly be self-hosted Vazir.
+- Verified via CDP: `document.fonts.check('16px Vazir')` true, body/h1 computed
+  family = Vazir, weights 400/700/900 loaded. Verified live: font file HTTP 200,
+  four @font-face present, Vazirmatn removed.
+- Note: a user reference file `FONT_RULES.md` (Kashida stretching, unrelated to
+  this site) exists in the folder; left untracked, NOT committed/published.
+
 ## Current state
 
-- Site is live, fully built, SEO-optimized, mobile-friendly, with the real photo.
+- Site is live, fully built, SEO-optimized, mobile-friendly, with the real photo
+  and self-hosted Vazir font.
 - All project files are under `D:\Projects\PublicProfile\Heshmat`.
 - Governance files: `RULES.md` (English, Rule 1 photos + Rule 2 strict SEO +
-  target keywords) and this `MEMORY.md`.
+  target keywords + Rule 3 strict Vazir font) and this `MEMORY.md`.
 
 ## Pending / recommended (requires user action)
 
