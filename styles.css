@@ -57,6 +57,9 @@ body {
 
 img { display: block; max-width: 100%; }
 
+picture { display: block; }
+.cover picture { height: 100%; }
+
 /* ---------- Top navigation ---------- */
 .topnav {
   position: sticky;

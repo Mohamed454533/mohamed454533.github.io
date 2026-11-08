@@ -37,7 +37,7 @@
   <!-- Icons & performance -->
   <link rel="icon" href="assets/avatar.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="assets/avatar.jpg">
-  <link rel="preload" as="image" href="assets/cover.jpg" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="assets/cover.webp" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/Vazir-Regular.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/Vazir-Bold.woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
@@ -112,7 +112,10 @@
     <!-- Profile header card -->
     <section class="card profile-card">
       <div class="cover">
-        <img src="assets/cover.jpg" alt="غروب آفتاب بر زمین خاکی فوتبال روستای شهرک ولی‌عصر بدره" width="1792" height="1024" fetchpriority="high" decoding="async">
+        <picture>
+          <source srcset="assets/cover.webp" type="image/webp">
+          <img src="assets/cover.jpg" alt="غروب آفتاب بر زمین خاکی فوتبال روستای شهرک ولی‌عصر بدره" width="1792" height="1024" fetchpriority="high" decoding="async">
+        </picture>
       </div>
       <div class="profile-body">
         <img class="avatar" src="assets/avatar.jpg" alt="عکس حشمت صیادپرست، فوتبالیست ملقب به بولدوزر دانشگاه" width="512" height="512" decoding="async">
@@ -133,7 +136,7 @@
     <section id="about" class="card reveal">
       <h2>درباره</h2>
       <div class="about-grid">
-        <img class="about-photo" src="pictures/photo_2024-07-27_11-53-24.jpg" alt="حشمت صیادپرست در تهران" width="640" height="640" loading="lazy" decoding="async">
+        <img class="about-photo" src="pictures/heshmat-sayadparast.jpg" alt="حشمت صیادپرست در تهران" width="640" height="640" loading="lazy" decoding="async">
         <div class="about-text">
           <p>
             حشمت صیاد پرست، که بسیاری او را با نام «حشمت صیاد» می‌شناسند، فوتبال را از زمین‌های خاکی روستای شهرک ولی‌عصر در شهرستان بدرهٔ ایلام آغاز کرد؛
@@ -239,7 +242,10 @@
     <!-- Legacy -->
     <section id="legacy" class="card legacy-card reveal">
       <h2>میراث</h2>
-      <img class="legacy-photo" src="assets/grass-ball.jpg" alt="توپ فوتبال کلاسیک روی چمن ورزشگاه در غروب آفتاب" width="1792" height="1024" loading="lazy" decoding="async">
+      <picture>
+        <source srcset="assets/grass-ball.webp" type="image/webp">
+        <img class="legacy-photo" src="assets/grass-ball.jpg" alt="توپ فوتبال کلاسیک روی چمن ورزشگاه در غروب آفتاب" width="1792" height="1024" loading="lazy" decoding="async">
+      </picture>
       <blockquote>
         «هیچ‌وقت به حقش در فوتبال نرسید &mdash; اما هرگز هم تسلیم نشد.»
       </blockquote>
@@ -253,7 +259,7 @@
     <section id="links" class="card reveal">
       <h2>پیوندها</h2>
       <div class="links-grid">
-        <a class="link-item" href="https://github.com/HeshmatSayad" target="_blank" rel="noopener">پروفایل گیت‌هاب حشمت صیادپرست</a>
+        <a class="link-item" href="https://github.com/HeshmatSayad" target="_blank" rel="me noopener">پروفایل گیت‌هاب حشمت صیادپرست</a>
         <a class="link-item" href="https://www.tums.ac.ir/" target="_blank" rel="noopener">دانشگاه علوم پزشکی تهران</a>
         <a class="link-item" href="https://www.ffiri.ir/" target="_blank" rel="noopener">فدراسیون فوتبال جمهوری اسلامی ایران</a>
       </div>
