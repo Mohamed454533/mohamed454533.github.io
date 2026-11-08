@@ -54,3 +54,11 @@ These must appear naturally in the title, meta description, visible body content
 image alt text, and JSON-LD (`name` + `alternateName`). Target them professionally
 and contextually — never by keyword stuffing, hidden text, or repetition tricks,
 which violate Google spam policies and this rule.
+
+## Rule 3 — Typography (Strict, Mandatory)
+
+The site font must strictly be **Vazir** (وزیر), self-hosted from `assets/fonts/`
+(woff2, weights 400/500/700/900, `font-display: swap`). Do not replace it with
+Vazirmatn or any other font, and do not depend on an external font CDN. Only
+generic fallbacks (Tahoma, sans-serif) are allowed after Vazir. Critical weights
+are preloaded for performance (Rule 2).
