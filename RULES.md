@@ -102,5 +102,11 @@ Standing technical conventions for this site:
   served by GitHub Pages for missing URLs.
 - **Identity links:** links to the owner's GitHub profile use `rel="me"`;
   JSON-LD `Person.sameAs` points to the same profile.
+- **Indexing discovery:** maintain a cluster of genuine crawlable links from
+  github.com to the site — the profile README (`HeshmatSayad/HeshmatSayad`), the
+  website repo README (`HeshmatSayad.github.io`), and both repos' `homepage` field
+  set to the live URL. Keep cross-links between site and profile. The primary
+  direct indexing submission is Google Search Console (requires the user's Google
+  account); never claim indexing is guaranteed.
 - **Verification:** after every publish, check the live URL (status codes, tags,
   assets, custom 404) before reporting success.

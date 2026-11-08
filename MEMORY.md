@@ -199,6 +199,21 @@ Written in English for any AI assistant or developer. Companion to `RULES.md`.
   (no CrUX data yet). N/A for this single-page profile: e-commerce, hreflang,
   breadcrumbs, local business schema.
 
+### 2026-11-09 — Tag audit + indexing-discovery cluster
+- Ran a 37-point live tag audit: 37/37 PASS (charset, viewport, lang/dir, title,
+  description, author, robots/googlebot, theme-color, canonical, favicon,
+  apple-touch-icon, all 11 OG + profile tags, Twitter card, LCP/font preload,
+  defer, valid JSON-LD with sameAs/alternateName/dateModified, 404 noindex).
+- Increased indexing discovery (feasible, no user auth): set both repos' `homepage`
+  field to https://heshmatsayad.github.io (website repo + profile repo); added a
+  keyword-rich README.md to the website repo linking the live site + profile +
+  external links. This forms a crawlable github.com → site link cluster alongside
+  the profile README backlink and the site's rel=me link.
+- Verified: repo homepages set, website repo README present, Pages built.
+- Rule 5 updated with the indexing-discovery convention.
+- Still Blocked (user action): GitHub profile fields (`user` scope), Google Search
+  Console + Analytics (user's Google account — the primary direct indexing lever).
+
 ## Current state
 
 - Site is live, fully built, SEO-optimized, mobile-friendly, with the real photo,
