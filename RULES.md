@@ -41,3 +41,16 @@ Required on every page and every publish:
 
 Any change that weakens SEO is forbidden. When in doubt, follow Google's official
 documentation over third-party advice.
+
+### Primary target keywords (must always be targeted)
+
+The main keywords this site must rank for, in all three written forms:
+
+1. `حشمت صیاد`
+2. `حشمت صیاد پرست` (with a space)
+3. `حشمت صیادپرست` (joined)
+
+These must appear naturally in the title, meta description, visible body content,
+image alt text, and JSON-LD (`name` + `alternateName`). Target them professionally
+and contextually — never by keyword stuffing, hidden text, or repetition tricks,
+which violate Google spam policies and this rule.
