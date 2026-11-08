@@ -62,3 +62,21 @@ The site font must strictly be **Vazir** (وزیر), self-hosted from `assets/fo
 Vazirmatn or any other font, and do not depend on an external font CDN. Only
 generic fallbacks (Tahoma, sans-serif) are allowed after Vazir. Critical weights
 are preloaded for performance (Rule 2).
+
+## Rule 4 — ZWNJ & Kashida (Strict, per FONT_RULES.md)
+
+Follow the project reference `FONT_RULES.md` exactly for Persian text shaping.
+
+- **ZWNJ (U+200C):** grammatical suffixes and compounds use a half-space, never a
+  full space — e.g. plural «ها» (`ترمینال‌ها`, not `ترمینال ها`) and the prefix
+  «می» (`می‌شود`, not `می شود`). ZWNJ is a non-joining character (type U).
+  Exception: the deliberate target-keyword form `حشمت صیاد پرست` keeps its full
+  space (Rule 2) and must not be converted.
+- **Kashida (U+0640):** stretch display text horizontally to **1.25×** its measured
+  width using the exact algorithm in `FONT_RULES.md` (one kashida per valid gap,
+  fill gaps in order, stop at target, skip already-stretched text, valid gap =
+  `lettersJoin`). Implemented in `script.js`, applied to display titles/labels
+  (headings, tags, nav, nickname banner, timeline places, blockquote).
+- **Display-only:** stretching happens at render time in the DOM; the HTML source
+  (stored data) stays raw — never stretch input fields or stored content. This
+  keeps the crawled source clean for SEO (Rule 2).
