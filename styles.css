@@ -1,3 +1,12 @@
+/* ============================================================
+   Profile site stylesheet — sections:
+   1 Fonts   2 Tokens   3 Base   4 Navigation   5 Layout
+   6 Profile header   7 About   8 Timeline   9 Playing style
+   10 Legacy   11 Links   12 Footer   13 Not-found (404.html)
+   14 Motion   15 Responsive
+   ============================================================ */
+
+/* 1 — Fonts (self-hosted Vazir, Rule 3) */
 @font-face {
   font-family: 'Vazir';
   src: url('assets/fonts/Vazir-Regular.woff2') format('woff2');
@@ -30,20 +39,27 @@
   font-display: swap;
 }
 
+/* 2 — Tokens */
 :root {
   --bg: #f3f2ef;
   --card: #ffffff;
+  --surface: #faf9f6;
   --ink: #1d1b16;
   --muted: #6b675c;
+  --text: #3a372f;
   --line: #e4e0d5;
   --green: #1e7a46;
   --green-dark: #14532d;
   --amber: #d97706;
   --amber-soft: #fef3e2;
+  --amber-ink: #92580a;
+  --amber-line: #f0dfc0;
   --radius: 14px;
+  --radius-sm: 12px;
   --shadow: 0 1px 3px rgba(29, 27, 22, .08), 0 8px 24px rgba(29, 27, 22, .06);
 }
 
+/* 3 — Base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -60,7 +76,7 @@ img { display: block; max-width: 100%; }
 picture { display: block; }
 .cover picture { height: 100%; }
 
-/* ---------- Top navigation ---------- */
+/* 4 — Navigation */
 .topnav {
   position: sticky;
   top: 0;
@@ -110,7 +126,7 @@ picture { display: block; }
 
 .nav-links a:hover { background: var(--amber-soft); color: var(--ink); }
 
-/* ---------- Layout ---------- */
+/* 5 — Layout */
 .container {
   max-width: 860px;
   margin: 0 auto;
@@ -134,10 +150,10 @@ picture { display: block; }
   border-bottom: 2px solid var(--amber-soft);
 }
 
-.card p { margin-bottom: 12px; color: #3a372f; }
+.card p { margin-bottom: 12px; color: var(--text); }
 .card p:last-child { margin-bottom: 0; }
 
-/* ---------- Profile header ---------- */
+/* 6 — Profile header */
 .profile-card { padding: 0; overflow: hidden; }
 
 .cover { height: 220px; overflow: hidden; }
@@ -169,13 +185,13 @@ picture { display: block; }
 .tag {
   font-size: 12.5px;
   background: var(--amber-soft);
-  color: #92580a;
-  border: 1px solid #f0dfc0;
+  color: var(--amber-ink);
+  border: 1px solid var(--amber-line);
   padding: 4px 12px;
   border-radius: 999px;
 }
 
-/* ---------- About ---------- */
+/* 7 — About */
 .about-grid {
   display: grid;
   grid-template-columns: 230px 1fr;
@@ -186,12 +202,12 @@ picture { display: block; }
 .about-photo {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
 }
 
-/* ---------- Timeline ---------- */
+/* 8 — Timeline */
 .timeline { list-style: none; position: relative; padding-right: 26px; }
 
 .timeline::before {
@@ -223,16 +239,16 @@ picture { display: block; }
 
 .timeline-content h3 { font-size: 16.5px; }
 
-.timeline-place {
+.card .timeline-place {
   font-size: 13px;
   color: var(--amber);
   font-weight: 600;
-  margin-bottom: 4px !important;
+  margin-bottom: 4px;
 }
 
 .timeline-content p:last-child { font-size: 14.5px; }
 
-/* ---------- Playing style ---------- */
+/* 9 — Playing style */
 .style-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -241,9 +257,9 @@ picture { display: block; }
 }
 
 .style-item {
-  background: #faf9f6;
+  background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   padding: 20px 16px;
   text-align: center;
   transition: transform .25s, box-shadow .25s;
@@ -259,7 +275,7 @@ picture { display: block; }
 
 .nickname-banner {
   background: linear-gradient(135deg, var(--green-dark), var(--green));
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   color: #fff;
   text-align: center;
   padding: 26px 20px;
@@ -273,17 +289,17 @@ picture { display: block; }
 
 .nickname-sub { font-size: 13px; opacity: .85; }
 
-/* ---------- Legacy ---------- */
+/* 10 — Legacy */
 .legacy-card {
   background: linear-gradient(160deg, #fffdf8, var(--amber-soft));
-  border-color: #f0dfc0;
+  border-color: var(--amber-line);
 }
 
 .legacy-photo {
   width: 100%;
   height: 210px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   margin-bottom: 18px;
 }
 
@@ -296,7 +312,7 @@ picture { display: block; }
   margin-bottom: 16px;
 }
 
-/* ---------- Links ---------- */
+/* 11 — Links */
 .links-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -310,7 +326,7 @@ picture { display: block; }
   color: var(--green-dark);
   font-weight: 600;
   font-size: 14px;
-  background: #faf9f6;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 16px 12px;
@@ -323,7 +339,7 @@ picture { display: block; }
   box-shadow: var(--shadow);
 }
 
-/* ---------- Footer ---------- */
+/* 12 — Footer */
 .footer {
   text-align: center;
   color: var(--muted);
@@ -331,7 +347,31 @@ picture { display: block; }
   padding: 8px 0 16px;
 }
 
-/* ---------- Reveal animation ---------- */
+/* 13 — Not-found page (404.html) */
+.nf-wrap { min-height: 70vh; display: grid; place-items: center; padding: 40px 20px; }
+
+.nf-card { max-width: 520px; text-align: center; }
+
+.nf-code { font-size: 72px; font-weight: 900; color: var(--green-dark); line-height: 1; }
+
+.nf-card h1 { font-size: 24px; margin: 12px 0; }
+
+.nf-card p { color: var(--muted); margin-bottom: 20px; }
+
+.nf-home {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 10px;
+  transition: background .2s;
+}
+
+.nf-home:hover { background: var(--green-dark); }
+
+/* 14 — Motion */
 body.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 body.js .reveal.visible { opacity: 1; transform: none; }
 
@@ -340,7 +380,7 @@ body.js .reveal.visible { opacity: 1; transform: none; }
   body.js .reveal { opacity: 1; transform: none; transition: none; }
 }
 
-/* ---------- Responsive ---------- */
+/* 15 — Responsive */
 @media (max-width: 640px) {
   .nav-links { display: none; }
   .cover { height: 150px; }
