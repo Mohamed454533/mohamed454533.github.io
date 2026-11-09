@@ -214,6 +214,38 @@ Written in English for any AI assistant or developer. Companion to `RULES.md`.
 - Still Blocked (user action): GitHub profile fields (`user` scope), Google Search
   Console + Analytics (user's Google account — the primary direct indexing lever).
 
+### 2026-11-09 — Deep refactor (zero behavior change)
+- Baseline evidence before refactor: kashida count 934 (incl. links section),
+  scrollWidth 1265/1280, 5 images all loading (WebP for cover/grass-ball),
+  timelinePlace margin 4px, tag audit 37/37.
+- Refactor:
+  - Extracted the pure kashida engine to `kashida.js` (ES module, no DOM);
+    `script.js` keeps reveal-on-scroll + DOM wiring and imports `{ stretch }`.
+    index.html loads `script.js` as `type="module"`.
+  - styles.css reorganized into 16 numbered sections with shared tokens
+    (--surface, --radius-sm, --amber-ink, --amber-line, --text); removed the
+    `.timeline-place` !important by scoping to `.card .timeline-place` (computed
+    margin still 4px).
+  - Moved 404.html's inline <style> block into styles.css (section 14).
+- Post-refactor verification (local CDP): kashida 934, fonts Vazir, images/WebP
+  identical, timelinePlace margin 4px, styleItem bg #faf9f6, no overflow; main +
+  404 renders identical to baseline. Live: tag audit 39/39 PASS, kashida.js 200,
+  source kashida still 0.
+- No URLs, content, tags, or visual behavior changed (Rule 5 forbids cosmetic URL
+  changes; module script is the only new URL).
+
+### 2026-11-09 — Gallery from new pictures (Rule 1)
+- User dropped 3 new photos in pictures/. Assessment: grass-pitch photo (two
+  players #17/#5 + child, 1280x964) good quality; futsal team lineup (photo of a
+  screen, 1000x750) usable after crop; third photo rotated with screen chrome —
+  skipped at discretion (Rule 1 allows choosing suitable ones).
+- Optimized: pictures/futsal-team-lineup.jpg (cropped 910x680, 158KB) and
+  pictures/grass-pitch-team.jpg (1280x964, 121KB); originals kept in pictures/.
+- Added a «گالری» section (nav item + 2-column grid with captions, mobile 1-col)
+  between Legacy and Links; sitemap image entries 4→6.
+- Verified locally (both images load, kashida 960 incl. captions, no overflow) and
+  live (both images 200, sitemap 6 images, gallery markup present).
+
 ## Current state
 
 - Site is live, fully built, SEO-optimized, mobile-friendly, with the real photo,
