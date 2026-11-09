@@ -246,6 +246,22 @@ Written in English for any AI assistant or developer. Companion to `RULES.md`.
 - Verified locally (both images load, kashida 960 incl. captions, no overflow) and
   live (both images 200, sitemap 6 images, gallery markup present).
 
+### 2026-11-09 — Photo quality enhancement + 4-photo gallery
+- User asked to enhance all photos added that day as much as possible and re-upload.
+- Pillow is unavailable in this env (pip wheel fails) and no ImageMagick/ffmpeg;
+  enhancement done via headless-Edge canvas (`ctx.filter = brightness(103%)
+  contrast(106%) saturate(115%)`, JPEG q95) driven over CDP.
+- Results: futsal-team-lineup.jpg 291KB and grass-pitch-team.jpg 180KB re-exported
+  at q95 (replacing the q82 versions); two new gallery photos added —
+  heshmat-white-kit.jpg (portrait in white kit, 1083x1280, best of the batch) and
+  futsal-player-portrait.jpg (rotated screen photo, rotated 90° CCW + screen-chrome
+  crop, 686x770). Gallery is now a 2x2 grid with 4 photos; sitemap image entries 6→8.
+- Gotcha learned: GDI+ `Image.Save` preserves EXIF orientation, so a RotateFlip'd
+  copy displayed sideways again in the browser (image-orientation: from-image).
+  Fix: save through `New-Object System.Drawing.Bitmap($i)` which drops property
+  items. Verified locally (4 images load, no overflow) and live (all 200, sitemap 8).
+- Fourth photo (09-29-27) made usable via rotation+crop+enhance after all.
+
 ## Current state
 
 - Site is live, fully built, SEO-optimized, mobile-friendly, with the real photo,
